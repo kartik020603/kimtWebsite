@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  name      String?
+  role      String   // "ADMIN" or "STUDENT"
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  student   Student?
+}
+
+model Student {
+  id             String        @id @default(cuid())
+  userId         String        @unique
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mobileNo       String
+  course         String
+  status         String        @default("Active") // "Active" or "Course Completed"
+  totalFees      Float
+  dueFees        Float
+  dueDate        DateTime?
+  payments       Payment[]
+  certificates   Certificate[]
+}
+
+model Certificate {
+  id              String   @id @default(cuid())
+  certificateId   String   @unique
+  studentId       String
+  student         Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  courseName      String
+  completionDate  DateTime
+  duration        String
+  fathersName     String
+  photo           String?
+  issuedAt        DateTime @default(now())
+}
+
+model Payment {
+  id          String   @id @default(cuid())
+  studentId   String
+  student     Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  amount      Float
+  paymentDate DateTime @default(now())
+  status      String   // "PAID", "PENDING", etc.
+  description String?
+}
