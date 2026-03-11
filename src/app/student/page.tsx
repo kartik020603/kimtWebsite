@@ -15,7 +15,7 @@ export default async function StudentDashboard() {
     }) as any;
 
     if (!studentData) {
-        return <div className="p-12 text-center text-gray-500">Profile data not found (ID: {session?.user?.id}). Please contact admin.</div>;
+        return <div className="p-12 text-center text-gray-500">Profile data not found (ID: {(session?.user as any)?.id}). Please contact admin.</div>;
     }
 
     return (
