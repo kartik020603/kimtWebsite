@@ -22,7 +22,7 @@ export default function HeroSlider() {
     }, []);
 
     return (
-        <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+        <section className="relative overflow-hidden min-h-[60vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center">
             {/* Slides */}
             {slides.map((src, i) => (
                 <div
@@ -31,7 +31,7 @@ export default function HeroSlider() {
                     style={{
                         backgroundImage: `url(${src})`,
                         backgroundSize: "cover",
-                        backgroundPosition: "center",
+                        backgroundPosition: "center top",
                         opacity: i === current ? 1 : 0,
                         transform: i === current
                             ? "translateX(0%)"
