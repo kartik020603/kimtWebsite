@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Rocket, GraduationCap, ShieldCheck, Phone, Info, BookOpen } from "lucide-react";
+import { Menu, X, Rocket, GraduationCap, ShieldCheck, Phone, Info, BookOpen, LogOut, LayoutDashboard } from "lucide-react";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const { data: session } = useSession();
 
     const navLinks = [
         { name: "Home", href: "/", icon: Rocket },
@@ -41,12 +43,31 @@ export default function Navbar() {
                                 <span>{link.name}</span>
                             </Link>
                         ))}
-                        <Link
-                            href="/login"
-                            className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all hover:scale-105 shadow-md shadow-blue-200"
-                        >
-                            Login
-                        </Link>
+                        {session ? (
+                            <div className="flex items-center space-x-3">
+                                <Link
+                                    href={(session.user as any)?.role === "ADMIN" ? "/admin" : "/student"}
+                                    className="flex items-center gap-2 bg-blue-50 text-blue-700 px-5 py-2 rounded-full font-semibold hover:bg-blue-100 transition-all shadow-sm"
+                                >
+                                    <LayoutDashboard className="h-4 w-4" />
+                                    <span>Dashboard</span>
+                                </Link>
+                                <button
+                                    onClick={() => signOut({ callbackUrl: "/" })}
+                                    className="flex items-center gap-2 bg-gray-50 text-gray-700 px-5 py-2 rounded-full font-semibold hover:bg-gray-100 transition-all shadow-sm"
+                                >
+                                    <LogOut className="h-4 w-4" />
+                                    <span>Logout</span>
+                                </button>
+                            </div>
+                        ) : (
+                            <Link
+                                href="/login"
+                                className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all hover:scale-105 shadow-md shadow-blue-200"
+                            >
+                                Login
+                            </Link>
+                        )}
                     </div>
 
                     <div className="md:hidden flex items-center">
@@ -75,13 +96,33 @@ export default function Navbar() {
                                 <span className="font-medium">{link.name}</span>
                             </Link>
                         ))}
-                        <Link
-                            href="/login"
-                            onClick={() => setIsOpen(false)}
-                            className="flex items-center justify-center w-full bg-blue-600 text-white px-4 py-3 rounded-xl font-bold mt-4"
-                        >
-                            Login
-                        </Link>
+                        {session ? (
+                            <div className="mt-4 space-y-2 border-t border-gray-100 pt-4">
+                                <Link
+                                    href={(session.user as any)?.role === "ADMIN" ? "/admin" : "/student"}
+                                    onClick={() => setIsOpen(false)}
+                                    className="flex items-center justify-center gap-2 w-full bg-blue-50 text-blue-700 px-4 py-3 rounded-xl font-bold"
+                                >
+                                    <LayoutDashboard className="h-5 w-5" />
+                                    <span>Dashboard</span>
+                                </Link>
+                                <button
+                                    onClick={() => { setIsOpen(false); signOut({ callbackUrl: "/" }); }}
+                                    className="flex items-center justify-center gap-2 w-full bg-gray-50 text-gray-700 px-4 py-3 rounded-xl font-bold"
+                                >
+                                    <LogOut className="h-5 w-5" />
+                                    <span>Logout</span>
+                                </button>
+                            </div>
+                        ) : (
+                            <Link
+                                href="/login"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center justify-center w-full bg-blue-600 text-white px-4 py-3 rounded-xl font-bold mt-4"
+                            >
+                                Login
+                            </Link>
+                        )}
                     </div>
                 </div>
             )}
