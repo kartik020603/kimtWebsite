@@ -1,14 +1,14 @@
-import { Code, Database, Cpu, Globe, Smartphone, Palette, ArrowRight } from "lucide-react";
+import { ArrowRight, Keyboard, Monitor, Code, Cpu, Calculator, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 export default function Courses() {
     const courses = [
-        { name: "Full Stack Development", duration: "12 Months", icon: Globe, color: "bg-blue-100 text-blue-600", desc: "Build modern web applications from scratch using MERN/NextJS stack." },
-        { name: "Artificial Intelligence", duration: "18 Months", icon: Cpu, color: "bg-blue-100 text-blue-600", desc: "Dive deep into Machine Learning, Neural Networks and Cognitive Computing." },
-        { name: "Data Science & Big Data", duration: "12 Months", icon: Database, color: "bg-purple-100 text-purple-600", desc: "Learn to analyze large datasets and gain valuable business insights." },
-        { name: "Mobile App Development", duration: "6 Months", icon: Smartphone, color: "bg-emerald-100 text-emerald-600", desc: "Create stunning iOS and Android applications with Flutter and React Native." },
-        { name: "UI/UX Design Masterclass", duration: "4 Months", icon: Palette, color: "bg-pink-100 text-pink-600", desc: "Master the art of user research and high-fidelity interface design." },
-        { name: "Cybersecurity Analyst", duration: "9 Months", icon: Code, color: "bg-orange-100 text-orange-600", desc: "Learn to protect digital infrastructure from advanced security threats." },
+        { name: "Hindi / English Typing", duration: "3 Months", icon: Keyboard, color: "bg-blue-100 text-blue-600", desc: "Learn fast and accurate typing in both Hindi and English using professional typing software. Improve your typing speed for office work, government exams, and data entry jobs." },
+        { name: "Computer Basics", duration: "3 Months", icon: Monitor, color: "bg-purple-100 text-purple-600", desc: "Perfect for beginners. Learn fundamental computer skills including Windows, MS Word, Excel, PowerPoint, internet usage, email, and digital safety for daily office and personal work." },
+        { name: "Web Development", duration: "6 Months", icon: Code, color: "bg-emerald-100 text-emerald-600", desc: "Learn how to build modern websites using HTML, CSS, JavaScript and real-world tools. Create responsive websites and deploy them online like professional developers." },
+        { name: "Artificial Intelligence", duration: "6 Months", icon: Cpu, color: "bg-orange-100 text-orange-600", desc: "Explore the world of AI and Machine Learning. Learn how AI tools work, build simple AI models, and use modern AI technologies for your new earning startup." },
+        { name: "Tally (Accounting Software)", duration: "3 Months", icon: Calculator, color: "bg-pink-100 text-pink-600", desc: "Learn professional accounting using Tally. Understand GST billing, inventory management, financial reports, and real business accounting practices." },
+        { name: "CCC (Course on Computer Concepts)", duration: "3 Months", icon: BookOpen, color: "bg-blue-100 text-blue-600", desc: "Prepare for the government-recognized CCC certification. Learn basic computer operations, MS Office, internet usage, and digital literacy required for many government jobs." },
     ];
 
     return (

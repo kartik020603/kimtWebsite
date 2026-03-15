@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const slides = ["/hero1.png", "/hero2.png", "/hero3.png"];
+const slides = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpg", "/hero4.jpg"];
 
 export default function HeroSlider() {
     const [current, setCurrent] = useState(0);
