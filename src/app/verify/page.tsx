@@ -101,7 +101,7 @@ export default async function VerifyPage({
                         </div>
                     </div>
 
-                    <CertificateCard certificate={certificate} student={certificate.student} />
+                    <CertificateCard certificate={certificate} student={certificate.student} showDownload={false} />
                 </div>
             )}
         </div>
