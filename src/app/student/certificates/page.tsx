@@ -39,7 +39,7 @@ export default async function StudentCertificatesPage() {
             ) : (
                 <div className="space-y-12">
                     {certificates.map((cert: any) => (
-                        <CertificateCard key={cert.id} certificate={cert} student={student} />
+                        <CertificateCard key={cert.id} certificate={cert} student={student} showDownload={false} />
                     ))}
                 </div>
             )}
