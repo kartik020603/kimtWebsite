@@ -22,7 +22,7 @@ export default function HeroSlider() {
     }, []);
 
     return (
-        <section className="relative overflow-hidden min-h-[60vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center">
+        <section className="relative overflow-hidden w-full aspect-[9/16] md:aspect-video lg:aspect-auto lg:min-h-[90vh] flex items-center">
             {/* Slides */}
             {slides.map((src, i) => (
                 <div
