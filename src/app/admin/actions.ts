@@ -237,12 +237,17 @@ export async function updateStudent(formData: FormData) {
             data: { name, username }
         });
 
-        // Update Student table using raw SQL to bypass stale Prisma client issues
-        // This is a workaround for the 'Unknown argument status' error when prisma generate fails due to file locks
-        await prisma.$executeRawUnsafe(
-            `UPDATE Student SET course = ?, mobileNo = ?, status = ?, totalFees = ?, dueFees = ?, dueDate = ? WHERE userId = ?`,
-            course, mobileNo, status, totalFees, dueFees, dueDate ? dueDate.toISOString() : null, id
-        );
+        await prisma.student.update({
+            where: { userId: id },
+            data: {
+                course,
+                mobileNo,
+                status,
+                totalFees,
+                dueFees,
+                dueDate
+            }
+        });
 
         revalidatePath("/admin/students");
         revalidatePath("/admin");
