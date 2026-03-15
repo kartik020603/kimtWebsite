@@ -22,7 +22,7 @@ export default async function StudentDashboard() {
         <div className="space-y-10">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                    <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight underline-offset-8 decoration-indigo-600">
+                    <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight underline-offset-8 decoration-blue-600">
                         Welcome, {studentData.user.name || studentData.user.username}!
                     </h1>
                     <p className="text-gray-500 font-medium mt-1">Manage your courses and fee details here.</p>
@@ -34,8 +34,8 @@ export default async function StudentDashboard() {
                     {/* Quick Info Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm flex items-start gap-4">
-                            <div className="bg-indigo-50 p-4 rounded-2xl">
-                                <BookOpen className="h-6 w-6 text-indigo-600" />
+                            <div className="bg-blue-50 p-4 rounded-2xl">
+                                <BookOpen className="h-6 w-6 text-blue-600" />
                             </div>
                             <div>
                                 <p className="text-gray-400 text-sm font-bold uppercase tracking-wider mb-1">Enrolled Course</p>
@@ -93,28 +93,28 @@ export default async function StudentDashboard() {
 
                 {/* Fees Info Sidebar */}
                 <div className="space-y-8">
-                    <div className="bg-indigo-600 p-8 rounded-[2.5rem] shadow-2xl shadow-indigo-100 text-white relative overflow-hidden">
+                    <div className="bg-blue-600 p-8 rounded-[2.5rem] shadow-2xl shadow-blue-100 text-white relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
-                        <CreditCard className="h-10 w-10 text-indigo-200 mb-6" />
+                        <CreditCard className="h-10 w-10 text-blue-200 mb-6" />
                         <h3 className="text-lg font-bold opacity-80 mb-2">Total Outstanding</h3>
                         <div className="text-4xl font-black mb-10">₹{studentData.dueFees.toLocaleString()}</div>
 
-                        <div className="space-y-4 pt-6 border-t border-indigo-500/50">
+                        <div className="space-y-4 pt-6 border-t border-blue-500/50">
                             <div className="flex justify-between items-center">
-                                <span className="text-indigo-200 text-sm font-bold uppercase tracking-wider">Next Due Date</span>
+                                <span className="text-blue-200 text-sm font-bold uppercase tracking-wider">Next Due Date</span>
                                 <span className="font-bold flex items-center gap-2">
                                     <Calendar className="h-4 w-4" />
                                     {studentData.dueDate ? new Date(studentData.dueDate).toLocaleDateString() : 'N/A'}
                                 </span>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="text-indigo-200 text-sm font-bold uppercase tracking-wider">Total Course Fee</span>
+                                <span className="text-blue-200 text-sm font-bold uppercase tracking-wider">Total Course Fee</span>
                                 <span className="font-bold">₹{studentData.totalFees.toLocaleString()}</span>
                             </div>
                         </div>
                     </div>
 
-                    <div className={`${studentData.status === 'Course Completed' ? 'bg-indigo-600' : 'bg-emerald-600'} p-8 rounded-[2.5rem] shadow-2xl flex items-center gap-4 text-white transition-all`}>
+                    <div className={`${studentData.status === 'Course Completed' ? 'bg-blue-600' : 'bg-emerald-600'} p-8 rounded-[2.5rem] shadow-2xl flex items-center gap-4 text-white transition-all`}>
                         <CheckCircle2 className="h-8 w-8 text-white/80" />
                         <div>
                             <p className="font-bold text-lg">{studentData.status || "Active Status"}</p>

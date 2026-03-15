@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Award, BookOpen, Clock, CheckCircle2, Phone, UserCheck, User, ShieldCheck, X, Download } from "lucide-react";
+import html2canvas from "html2canvas";
 
 interface CertificateCardProps {
     certificate: any;
@@ -12,8 +13,37 @@ interface CertificateCardProps {
 export default function CertificateCard({ certificate, student, showDownload = true }: CertificateCardProps) {
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-    const handlePrint = () => {
-        window.print();
+    const handlePrint = async () => {
+        const certificateElement = document.getElementById("certificate-card-content");
+        if (!certificateElement) return;
+
+        try {
+            // Temporarily hide elements we don't want in the image (like the download button)
+            const noPrintElements = certificateElement.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => (el as HTMLElement).style.display = 'none');
+
+            const canvas = await html2canvas(certificateElement, {
+                scale: 2, // Higher resolution
+                useCORS: true, // Allow external images
+                backgroundColor: "#ffffff",
+            });
+
+            // Restore hidden elements
+            noPrintElements.forEach(el => (el as HTMLElement).style.display = '');
+
+            const image = canvas.toDataURL("image/jpeg", 0.95);
+            const safeId = (certificate.certificateId || "certificate").replace(/\//g, "-");
+            
+            const link = document.createElement("a");
+            link.href = image;
+            link.download = `KIMT_${safeId}.jpg`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (error) {
+            console.error("Failed to generate certificate image:", error);
+            alert("Failed to download certificate. Please try again.");
+        }
     };
 
     const handlePhotoDownload = () => {
@@ -79,18 +109,18 @@ export default function CertificateCard({ certificate, student, showDownload = t
     return (
         <>
             {/* Certificate Card */}
-            <div className="bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl shadow-indigo-50 overflow-hidden certificate-printable animate-in zoom-in-95 duration-300">
+            <div id="certificate-card-content" className="bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl shadow-blue-50 overflow-hidden certificate-printable animate-in zoom-in-95 duration-300">
                 {/* Header */}
-                <div className="bg-gradient-to-r from-indigo-700 to-indigo-600 p-10 text-white relative overflow-hidden">
+                <div className="bg-gradient-to-r from-blue-700 to-blue-600 p-10 text-white relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
                     <div className="relative z-10 flex items-start justify-between gap-6">
                         <div>
                             <div className="flex items-center gap-2 mb-3">
-                                <Award className="h-8 w-8 text-indigo-300" />
-                                <span className="text-indigo-200 font-bold uppercase tracking-widest text-xs">KIMT Institute — Certificate of Completion</span>
+                                <Award className="h-8 w-8 text-blue-300" />
+                                <span className="text-blue-200 font-bold uppercase tracking-widest text-xs">KIMT Institute — Certificate of Completion</span>
                             </div>
                             <h2 className="text-4xl font-black mb-1">{student.user.name || student.user.username}</h2>
-                            <p className="text-indigo-200 font-medium text-lg">{certificate.courseName}</p>
+                            <p className="text-blue-200 font-medium text-lg">{certificate.courseName}</p>
                             <div className="mt-4 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl inline-block">
                                 <span className="font-black text-white tracking-wider">{certificate.certificateId}</span>
                             </div>
@@ -117,12 +147,12 @@ export default function CertificateCard({ certificate, student, showDownload = t
                                 <img
                                     src={certificate.photo}
                                     alt={student.user.name || "Student"}
-                                    className="h-28 w-28 rounded-2xl object-cover ring-2 ring-indigo-600"
+                                    className="h-28 w-28 rounded-2xl object-cover ring-2 ring-blue-600"
                                 />
                             </div>
                         )}
                         {!certificate.photo && (
-                            <div className="h-28 w-28 bg-indigo-500 rounded-2xl flex items-center justify-center font-black text-4xl text-white/80 flex-shrink-0 uppercase">
+                            <div className="h-28 w-28 bg-blue-500 rounded-2xl flex items-center justify-center font-black text-4xl text-white/80 flex-shrink-0 uppercase">
                                 {(student.user.name || student.user.username)[0]}
                             </div>
                         )}
@@ -155,7 +185,7 @@ export default function CertificateCard({ certificate, student, showDownload = t
                             {showDownload && (
                                 <button
                                     onClick={handlePrint}
-                                    className="flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-xl text-xs font-bold hover:bg-indigo-100 transition-all"
+                                    className="flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-100 transition-all"
                                 >
                                     <Download className="h-4 w-4" />
                                     Download Certificate
@@ -252,7 +282,7 @@ export default function CertificateCard({ certificate, student, showDownload = t
 
 function DetailItem({ icon: Icon, label, value, color }: { icon: any, label: string, value: string, color: string }) {
     const colorClasses: any = {
-        indigo: "bg-indigo-100 text-indigo-600",
+        indigo: "bg-blue-100 text-blue-600",
         emerald: "bg-emerald-100 text-emerald-600",
         amber: "bg-amber-100 text-amber-600",
         purple: "bg-purple-100 text-purple-600",

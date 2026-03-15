@@ -95,7 +95,7 @@ export default async function ReportsPage({
         <div className="space-y-10 pb-10">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                    <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight underline-offset-8 decoration-indigo-600">
+                    <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight underline-offset-8 decoration-blue-600">
                         Detailed Reports
                     </h1>
                     <p className="text-gray-500 font-medium mt-1">Independent analysis of enrollment and revenue.</p>
@@ -104,29 +104,29 @@ export default async function ReportsPage({
 
             {/* Filter Bar */}
             <div className="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm flex flex-wrap items-center gap-6">
-                <div className="flex items-center gap-2 text-indigo-600 font-bold text-sm uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-blue-600 font-bold text-sm uppercase tracking-wider">
                     <Filter className="h-4 w-4" />
                     Filter Reports
                 </div>
                 <form className="flex flex-wrap items-center gap-4 flex-1">
-                    <select name="month" className="bg-gray-50 border-none rounded-xl px-4 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-indigo-500">
+                    <select name="month" className="bg-gray-50 border-none rounded-xl px-4 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="">All Months</option>
                         {months.map((m, i) => (
                             <option key={m} value={i + 1} selected={selectedMonth === i + 1}>{m}</option>
                         ))}
                     </select>
-                    <select name="year" className="bg-gray-50 border-none rounded-xl px-4 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-indigo-500">
+                    <select name="year" className="bg-gray-50 border-none rounded-xl px-4 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-blue-500">
                         {[2024, 2025, 2026].map(y => (
                             <option key={y} value={y} selected={selectedYear === y}>{y}</option>
                         ))}
                     </select>
-                    <select name="course" className="bg-gray-50 border-none rounded-xl px-4 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-indigo-500">
+                    <select name="course" className="bg-gray-50 border-none rounded-xl px-4 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="">All Courses</option>
                         {courses.map(c => (
                             <option key={c.course} value={c.course} selected={selectedCourse === c.course}>{c.course}</option>
                         ))}
                     </select>
-                    <button type="submit" className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-md">
+                    <button type="submit" className="bg-blue-600 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-md">
                         Apply Reports
                     </button>
                     {(selectedMonth || selectedCourse) && (
@@ -137,15 +137,15 @@ export default async function ReportsPage({
 
             {/* Filtered Summary Panel */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <div className="bg-gradient-to-br from-indigo-600 to-indigo-700 p-8 rounded-[2.5rem] text-white shadow-xl relative overflow-hidden">
+                <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-8 rounded-[2.5rem] text-white shadow-xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl" />
                     <div className="relative z-10 flex flex-col h-full justify-between">
                         <div>
-                            <p className="text-indigo-100 font-bold uppercase text-[10px] tracking-[0.2em] mb-4">Selected Period Revenue</p>
+                            <p className="text-blue-100 font-bold uppercase text-[10px] tracking-[0.2em] mb-4">Selected Period Revenue</p>
                             <h2 className="text-5xl font-black mb-1">₹{filteredRevenue.toLocaleString()}</h2>
-                            <p className="text-indigo-200 font-medium">From {filteredPayments.length} transactions {selectedMonth ? `in ${months[selectedMonth - 1]}` : 'in the year'}</p>
+                            <p className="text-blue-200 font-medium">From {filteredPayments.length} transactions {selectedMonth ? `in ${months[selectedMonth - 1]}` : 'in the year'}</p>
                         </div>
-                        <div className="mt-8 flex items-center gap-2 text-indigo-100 font-bold">
+                        <div className="mt-8 flex items-center gap-2 text-blue-100 font-bold">
                             <TrendingUp className="h-5 w-5" />
                             <span>Revenue Analysis Complete</span>
                         </div>
@@ -165,7 +165,7 @@ export default async function ReportsPage({
                     <div className="space-y-4">
                         <div className="flex items-center justify-between p-4 bg-gray-50 rounded-2xl">
                             <span className="text-sm font-bold text-gray-500">Course Focus</span>
-                            <span className="text-sm font-black text-indigo-600 truncate max-w-[150px]">{selectedCourse || "All Courses"}</span>
+                            <span className="text-sm font-black text-blue-600 truncate max-w-[150px]">{selectedCourse || "All Courses"}</span>
                         </div>
                         <p className="text-xs text-gray-400 font-medium leading-relaxed">
                             Showing data for {selectedMonth ? months[selectedMonth - 1] : "the year"} {selectedYear}.
@@ -193,7 +193,7 @@ export default async function ReportsPage({
                                     <div className="flex items-center gap-2">
                                         <div className="h-2 flex-1 bg-gray-100 rounded-full overflow-hidden">
                                             <div
-                                                className="h-full bg-indigo-500 rounded-full"
+                                                className="h-full bg-blue-500 rounded-full"
                                                 style={{ width: `${Math.min(100, (cs.count / (filteredNewStudents || 1)) * 100)}%` }}
                                             />
                                         </div>
@@ -232,7 +232,7 @@ export default async function ReportsPage({
                                         <tr key={s.id} className="hover:bg-gray-50/50 transition-colors group">
                                             <td className="px-8 py-5">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="h-8 w-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xs uppercase">
+                                                    <div className="h-8 w-8 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs uppercase">
                                                         {s.user.name ? s.user.name[0] : s.user.username[0]}
                                                     </div>
                                                     <div className="flex flex-col">
@@ -266,7 +266,7 @@ export default async function ReportsPage({
                         {totalPages > 1 && (
                             <div className="p-8 border-t border-gray-50 flex items-center justify-between bg-gray-50/30 font-bold">
                                 <p className="text-sm text-gray-500 uppercase tracking-widest">
-                                    Page <span className="text-indigo-600 font-black">{currentPage}</span> / {totalPages}
+                                    Page <span className="text-blue-600 font-black">{currentPage}</span> / {totalPages}
                                 </p>
                                 <div className="flex items-center gap-2">
                                     {currentPage > 1 && (
@@ -280,7 +280,7 @@ export default async function ReportsPage({
                                     {currentPage < totalPages && (
                                         <a
                                             href={`/admin/reports?month=${params.month || ''}&year=${params.year || ''}&course=${params.course || ''}&page=${currentPage + 1}`}
-                                            className="px-6 py-2.5 bg-indigo-600 border border-indigo-600 rounded-xl text-xs font-black text-white hover:bg-indigo-700 transition-all shadow-md"
+                                            className="px-6 py-2.5 bg-blue-600 border border-blue-600 rounded-xl text-xs font-black text-white hover:bg-blue-700 transition-all shadow-md"
                                         >
                                             NEXT
                                         </a>

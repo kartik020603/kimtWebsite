@@ -24,7 +24,7 @@ export default function About() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
                 <div className="space-y-6">
-                    <div className="inline-flex items-center space-x-2 bg-indigo-100/50 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-semibold">
+                    <div className="inline-flex items-center space-x-2 bg-blue-100/50 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold">
                         <Target className="h-4 w-4" />
                         <span>Our Vision</span>
                     </div>
@@ -40,14 +40,14 @@ export default function About() {
                             "Global certificate recognition"
                         ].map((item, i) => (
                             <li key={i} className="flex items-center space-x-3 text-gray-700 font-medium">
-                                <CheckCircle className="h-5 w-5 text-indigo-500" />
+                                <CheckCircle className="h-5 w-5 text-blue-500" />
                                 <span>{item}</span>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div className="relative">
-                    <div className="aspect-square bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl shadow-2xl overflow-hidden flex items-center justify-center p-12">
+                    <div className="aspect-square bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl shadow-2xl overflow-hidden flex items-center justify-center p-12">
                         <GraduationCap className="h-64 w-64 text-white/20 absolute -bottom-10 -right-10" />
                         <Users className="h-48 w-48 text-white relative z-10" />
                     </div>

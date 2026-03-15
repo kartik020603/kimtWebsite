@@ -143,7 +143,7 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                 </div>
                 <button
                     onClick={() => setIsAddModalOpen(true)}
-                    className="flex items-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100"
+                    className="flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
                 >
                     <UserPlus className="h-5 w-5" />
                     Add Student
@@ -162,7 +162,7 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                                 setSearchTerm(e.target.value);
                                 setCurrentPage(1);
                             }}
-                            className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium"
+                            className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium"
                         />
                     </div>
                 </div>
@@ -184,7 +184,7 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                                 <tr key={s.id} className="hover:bg-gray-50/50 transition-colors group">
                                     <td className="px-8 py-6">
                                         <div className="flex items-center gap-4">
-                                            <div className="h-10 w-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold uppercase transition-transform group-hover:scale-110">
+                                            <div className="h-10 w-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold uppercase transition-transform group-hover:scale-110">
                                                 {s.name ? s.name[0] : s.username[0]}
                                             </div>
                                             <div className="flex flex-col">
@@ -212,7 +212,7 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                                     <td className="px-8 py-6 font-bold text-gray-900 tracking-tight">
                                         <div className="flex flex-col">
                                             <span className="text-red-500 text-sm italic">Due: ₹{s.student?.dueFees.toLocaleString()}</span>
-                                            <span className="text-indigo-600 text-[10px] uppercase">Total: ₹{s.student?.totalFees.toLocaleString()}</span>
+                                            <span className="text-blue-600 text-[10px] uppercase">Total: ₹{s.student?.totalFees.toLocaleString()}</span>
                                         </div>
                                     </td>
                                     <td className="px-8 py-6">
@@ -229,7 +229,7 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                                                 type="button"
                                                 onClick={() => { setSelectedStudent(s); setIsResetModalOpen(true); }}
                                                 title="Reset Password"
-                                                className="p-2.5 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all"
+                                                className="p-2.5 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all"
                                             >
                                                 <Key className="h-4 w-4" />
                                             </button>
@@ -260,7 +260,7 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                 {totalPages > 1 && (
                     <div className="p-8 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between bg-gray-50/30 gap-4">
                         <p className="text-sm text-gray-500 font-medium whitespace-nowrap">
-                            Showing <span className="text-indigo-600 font-bold">{Math.min(filteredStudents.length, (currentPage - 1) * itemsPerPage + 1)}</span> to <span className="text-indigo-600 font-bold">{Math.min(filteredStudents.length, currentPage * itemsPerPage)}</span> of <span className="text-indigo-600 font-bold">{filteredStudents.length}</span> students
+                            Showing <span className="text-blue-600 font-bold">{Math.min(filteredStudents.length, (currentPage - 1) * itemsPerPage + 1)}</span> to <span className="text-blue-600 font-bold">{Math.min(filteredStudents.length, currentPage * itemsPerPage)}</span> of <span className="text-blue-600 font-bold">{filteredStudents.length}</span> students
                         </p>
                         <div className="flex items-center gap-2">
                             <button
@@ -275,7 +275,7 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                                     <button
                                         key={i}
                                         onClick={() => setCurrentPage(i + 1)}
-                                        className={`w-10 h-10 flex-shrink-0 text-sm font-bold rounded-xl transition-all ${currentPage === i + 1 ? 'bg-indigo-600 text-white' : 'bg-white hover:bg-gray-50 border border-gray-200 text-gray-500'}`}
+                                        className={`w-10 h-10 flex-shrink-0 text-sm font-bold rounded-xl transition-all ${currentPage === i + 1 ? 'bg-blue-600 text-white' : 'bg-white hover:bg-gray-50 border border-gray-200 text-gray-500'}`}
                                     >
                                         {i + 1}
                                     </button>
@@ -309,50 +309,50 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                         <form onSubmit={handleAddStudent} className="space-y-6">
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Full Name</label>
-                                <input name="name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="Ex: John Doe" />
+                                <input name="name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="Ex: John Doe" />
                             </div>
 
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Student ID (Username)</label>
-                                    <input name="username" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="KIMT-2026-001" />
+                                    <input name="username" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="KIMT-2026-001" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Initial Password</label>
-                                    <input name="password" type="password" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="••••••••" />
+                                    <input name="password" type="password" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="••••••••" />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Enrolled Course</label>
-                                    <input name="course" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="e.g. AI & ML" />
+                                    <input name="course" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="e.g. AI & ML" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Mobile Number</label>
-                                    <input name="mobileNo" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="98XXXXXXXX" />
+                                    <input name="mobileNo" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="98XXXXXXXX" />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Total Fees (₹)</label>
-                                    <input name="totalFees" type="number" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium text-indigo-600" defaultValue="0" />
+                                    <input name="totalFees" type="number" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium text-blue-600" defaultValue="0" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Due Amount (₹)</label>
-                                    <input name="dueFees" type="number" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium text-red-600" defaultValue="0" />
+                                    <input name="dueFees" type="number" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium text-red-600" defaultValue="0" />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Next Payment Due Date</label>
-                                <input name="dueDate" type="date" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                                <input name="dueDate" type="date" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" />
                             </div>
 
                             <button
                                 disabled={loading}
-                                className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-2"
+                                className="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-100 flex items-center justify-center gap-2"
                             >
                                 {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Complete Registration"}
                             </button>
@@ -372,7 +372,7 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                             <X />
                         </button>
                         <h2 className="text-2xl font-black text-gray-900 mb-6">Reset Password</h2>
-                        <p className="text-gray-500 font-medium mb-6">Change password for <span className="text-indigo-600 font-bold">{selectedStudent?.username}</span></p>
+                        <p className="text-gray-500 font-medium mb-6">Change password for <span className="text-blue-600 font-bold">{selectedStudent?.username}</span></p>
 
                         <form onSubmit={handleResetPassword} className="space-y-6">
                             <div className="space-y-2">
@@ -382,13 +382,13 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                                     required
                                     value={newPassword}
                                     onChange={(e) => setNewPassword(e.target.value)}
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium"
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium"
                                     placeholder="••••••••"
                                 />
                             </div>
                             <button
                                 disabled={loading}
-                                className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-black hover:bg-indigo-700 transition-all flex items-center justify-center gap-2"
+                                className="w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition-all flex items-center justify-center gap-2"
                             >
                                 {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Update Password"}
                             </button>
@@ -414,28 +414,28 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                             <input type="hidden" name="id" value={selectedStudent.id} />
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Full Name</label>
-                                <input name="name" required defaultValue={selectedStudent.name} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                                <input name="name" required defaultValue={selectedStudent.name} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" />
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Student ID (Username)</label>
-                                    <input name="username" required defaultValue={selectedStudent.username} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                                    <input name="username" required defaultValue={selectedStudent.username} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Mobile Number</label>
-                                    <input name="mobileNo" required defaultValue={selectedStudent.student?.mobileNo} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                                    <input name="mobileNo" required defaultValue={selectedStudent.student?.mobileNo} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Enrolled Course</label>
-                                    <input name="course" required defaultValue={selectedStudent.student?.course} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                                    <input name="course" required defaultValue={selectedStudent.student?.course} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Status</label>
-                                    <select name="status" defaultValue={selectedStudent.student?.status || "Active"} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium bg-white">
+                                    <select name="status" defaultValue={selectedStudent.student?.status || "Active"} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium bg-white">
                                         <option value="Active">Active</option>
                                         <option value="Course Completed">Course Completed</option>
                                     </select>
@@ -445,22 +445,22 @@ export default function StudentManagement({ initialStudents }: { initialStudents
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Total Fees (₹)</label>
-                                    <input name="totalFees" type="number" required defaultValue={selectedStudent.student?.totalFees} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium text-indigo-600" />
+                                    <input name="totalFees" type="number" required defaultValue={selectedStudent.student?.totalFees} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium text-blue-600" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Due Amount (₹)</label>
-                                    <input name="dueFees" type="number" required defaultValue={selectedStudent.student?.dueFees} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium text-red-600" />
+                                    <input name="dueFees" type="number" required defaultValue={selectedStudent.student?.dueFees} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium text-red-600" />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Next Payment Due Date</label>
-                                <input name="dueDate" type="date" defaultValue={selectedStudent.student?.dueDate ? new Date(selectedStudent.student.dueDate).toISOString().split('T')[0] : ""} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                                <input name="dueDate" type="date" defaultValue={selectedStudent.student?.dueDate ? new Date(selectedStudent.student.dueDate).toISOString().split('T')[0] : ""} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" />
                             </div>
 
                             <button
                                 disabled={loading}
-                                className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-2"
+                                className="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-100 flex items-center justify-center gap-2"
                             >
                                 {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Save Changes"}
                             </button>

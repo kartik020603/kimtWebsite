@@ -93,7 +93,7 @@ export default function CertificateManagement({ students, initialCertificates }:
                             </div>
                             <div>
                                 <p className="font-black text-gray-900">Delete Certificate?</p>
-                                <p className="text-sm text-gray-500 font-medium">Certificate <span className="font-bold text-indigo-600">{confirmCertData.certId}</span> will be permanently deleted.</p>
+                                <p className="text-sm text-gray-500 font-medium">Certificate <span className="font-bold text-blue-600">{confirmCertData.certId}</span> will be permanently deleted.</p>
                             </div>
                         </div>
                         <div className="flex gap-3">
@@ -137,7 +137,7 @@ export default function CertificateManagement({ students, initialCertificates }:
                 </div>
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="flex items-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100"
+                    className="flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
                 >
                     <Plus className="h-5 w-5" />
                     Issue Certificate
@@ -146,13 +146,13 @@ export default function CertificateManagement({ students, initialCertificates }:
 
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-indigo-600 to-indigo-700 p-8 rounded-[2.5rem] text-white shadow-xl">
+                <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-8 rounded-[2.5rem] text-white shadow-xl">
                     <div className="flex items-center gap-4">
-                        <div className="h-14 w-14 bg-indigo-500 rounded-2xl flex items-center justify-center">
+                        <div className="h-14 w-14 bg-blue-500 rounded-2xl flex items-center justify-center">
                             <Award className="h-7 w-7" />
                         </div>
                         <div>
-                            <p className="text-indigo-200 text-sm font-bold uppercase tracking-wider">Total Issued</p>
+                            <p className="text-blue-200 text-sm font-bold uppercase tracking-wider">Total Issued</p>
                             <h2 className="text-4xl font-black">{initialCertificates.length}</h2>
                         </div>
                     </div>
@@ -172,7 +172,7 @@ export default function CertificateManagement({ students, initialCertificates }:
             <div className="bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
                 <div className="p-8 border-b border-gray-50 flex flex-col md:flex-row md:items-center justify-between bg-gray-50/30 gap-4">
                     <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                        <Award className="h-5 w-5 text-indigo-600" />
+                        <Award className="h-5 w-5 text-blue-600" />
                         All Certificates
                     </h3>
                     <div className="relative max-w-xs w-full">
@@ -182,7 +182,7 @@ export default function CertificateManagement({ students, initialCertificates }:
                             placeholder="Search by ID, Name or Course..."
                             value={searchTerm}
                             onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
-                            className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium"
+                            className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium"
                         />
                     </div>
                 </div>
@@ -202,19 +202,19 @@ export default function CertificateManagement({ students, initialCertificates }:
                             {paginatedCertificates.map((cert) => (
                                 <tr key={cert.id} className="hover:bg-gray-50/50 transition-colors group">
                                     <td className="px-8 py-6">
-                                        <span className="font-black text-indigo-600 tracking-wide">{cert.certificateId}</span>
+                                        <span className="font-black text-blue-600 tracking-wide">{cert.certificateId}</span>
                                     </td>
                                     <td className="px-8 py-6">
                                         <div className="flex items-center gap-3">
                                             {cert.photo ? (
                                                 <div className="relative group cursor-pointer" onClick={() => setLightboxPhoto(cert.photo)}>
-                                                    <img src={cert.photo} alt="photo" className="h-10 w-10 rounded-full object-cover ring-2 ring-indigo-100 group-hover:ring-indigo-400 transition-all" />
+                                                    <img src={cert.photo} alt="photo" className="h-10 w-10 rounded-full object-cover ring-2 ring-blue-100 group-hover:ring-blue-400 transition-all" />
                                                     <div className="absolute inset-0 bg-black/30 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
                                                         <ZoomIn className="h-4 w-4 text-white" />
                                                     </div>
                                                 </div>
                                             ) : (
-                                                <div className="h-10 w-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold uppercase text-sm">
+                                                <div className="h-10 w-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold uppercase text-sm">
                                                     {cert.student.user.name?.[0] || cert.student.user.username[0]}
                                                 </div>
                                             )}
@@ -251,7 +251,7 @@ export default function CertificateManagement({ students, initialCertificates }:
                 </div>
                 {totalPages > 1 && (
                     <div className="p-6 border-t border-gray-50 bg-gray-50/20 flex items-center justify-between">
-                        <p className="text-sm text-gray-500">Page <span className="text-indigo-600 font-bold">{currentPage}</span> of {totalPages}</p>
+                        <p className="text-sm text-gray-500">Page <span className="text-blue-600 font-bold">{currentPage}</span> of {totalPages}</p>
                         <div className="flex gap-2">
                             <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1} className="px-4 py-2 text-sm font-bold rounded-xl border border-gray-200 bg-white hover:bg-gray-50 disabled:opacity-50 transition-all">Previous</button>
                             <button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages} className="px-4 py-2 text-sm font-bold rounded-xl border border-gray-200 bg-white hover:bg-gray-50 disabled:opacity-50 transition-all">Next</button>
@@ -277,7 +277,7 @@ export default function CertificateManagement({ students, initialCertificates }:
                                 <input
                                     name="certificateId"
                                     required
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-black text-indigo-600 tracking-wider"
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-black text-blue-600 tracking-wider"
                                     placeholder="e.g. KIMT-2026-0001"
                                 />
                                 <p className="text-xs text-gray-400 font-medium">Enter your own unique certificate number.</p>
@@ -293,10 +293,10 @@ export default function CertificateManagement({ students, initialCertificates }:
                                         placeholder="Type to filter..."
                                         value={studentSearch}
                                         onChange={(e) => setStudentSearch(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-100 focus:ring-2 focus:ring-indigo-500 outline-none font-medium mb-2"
+                                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-100 focus:ring-2 focus:ring-blue-500 outline-none font-medium mb-2"
                                     />
                                 </div>
-                                <select name="studentId" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-bold text-gray-900 bg-gray-50/50">
+                                <select name="studentId" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-bold text-gray-900 bg-gray-50/50">
                                     <option value="">-- Choose Student --</option>
                                     {filteredStudents.map(s => (
                                         <option key={s.student?.id} value={s.student?.id}>{s.name || s.username} ({s.username})</option>
@@ -307,39 +307,39 @@ export default function CertificateManagement({ students, initialCertificates }:
                             {/* Course Name */}
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Course Name</label>
-                                <input name="courseName" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="e.g. Full Stack Development" />
+                                <input name="courseName" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="e.g. Full Stack Development" />
                             </div>
 
                             <div className="grid grid-cols-2 gap-5">
                                 {/* Completion Date */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Completion Date</label>
-                                    <input name="completionDate" type="date" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                                    <input name="completionDate" type="date" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" />
                                 </div>
                                 {/* Duration */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Duration</label>
-                                    <input name="duration" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="e.g. 6 Months" />
+                                    <input name="duration" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="e.g. 6 Months" />
                                 </div>
                             </div>
 
                             {/* Father's Name */}
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Father's Name</label>
-                                <input name="fathersName" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="Father's full name" />
+                                <input name="fathersName" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="Father's full name" />
                             </div>
 
                             {/* Photo Upload */}
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Certificate Photo</label>
                                 <div
-                                    className="border-2 border-dashed border-gray-200 rounded-2xl p-6 text-center cursor-pointer hover:border-indigo-400 hover:bg-indigo-50/30 transition-all"
+                                    className="border-2 border-dashed border-gray-200 rounded-2xl p-6 text-center cursor-pointer hover:border-blue-400 hover:bg-blue-50/30 transition-all"
                                     onClick={() => fileInputRef.current?.click()}
                                 >
                                     {photoPreview ? (
                                         <div className="flex flex-col items-center gap-3">
-                                            <img src={photoPreview} alt="preview" className="h-24 w-24 rounded-2xl object-cover ring-4 ring-indigo-100 shadow-md" />
-                                            <p className="text-sm font-bold text-indigo-600">✓ Photo selected — click to change</p>
+                                            <img src={photoPreview} alt="preview" className="h-24 w-24 rounded-2xl object-cover ring-4 ring-blue-100 shadow-md" />
+                                            <p className="text-sm font-bold text-blue-600">✓ Photo selected — click to change</p>
                                         </div>
                                     ) : (
                                         <div className="py-4">
@@ -356,7 +356,7 @@ export default function CertificateManagement({ students, initialCertificates }:
 
                             <button
                                 disabled={loading}
-                                className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-100"
+                                className="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-100"
                             >
                                 {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Issue Certificate"}
                             </button>

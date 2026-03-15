@@ -124,7 +124,7 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                 </div>
                 <button
                     onClick={() => setIsAddModalOpen(true)}
-                    className="flex items-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100"
+                    className="flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
                 >
                     <Plus className="h-5 w-5" />
                     Record Payment
@@ -136,7 +136,7 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                     <div className="bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
                         <div className="p-8 border-b border-gray-50 flex flex-col md:flex-row md:items-center justify-between bg-gray-50/30 gap-4">
                             <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                                <Filter className="h-5 w-5 text-indigo-600" />
+                                <Filter className="h-5 w-5 text-blue-600" />
                                 Recent Transactions
                             </h3>
                             <div className="relative max-w-xs w-full">
@@ -149,7 +149,7 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                                         setListSearchTerm(e.target.value);
                                         setCurrentPage(1);
                                     }}
-                                    className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium"
+                                    className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium"
                                 />
                             </div>
                         </div>
@@ -174,7 +174,7 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                                             </td>
                                             <td className="px-8 py-6">
                                                 <div className="flex flex-col">
-                                                    <span className="font-black text-indigo-600">₹{p.amount.toLocaleString()}</span>
+                                                    <span className="font-black text-blue-600">₹{p.amount.toLocaleString()}</span>
                                                     <span className={`text-[10px] font-bold ${p.status === 'PAID' ? 'text-emerald-500' : 'text-amber-500'}`}>
                                                         {p.status}
                                                     </span>
@@ -186,7 +186,7 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                                                     <button
                                                         type="button"
                                                         onClick={() => { setSelectedPayment(p); setIsEditModalOpen(true); }}
-                                                        className="p-2 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all"
+                                                        className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                                                         title="Edit Payment"
                                                     >
                                                         <Edit2 className="h-4 w-4" />
@@ -225,7 +225,7 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                         {totalPages > 1 && (
                             <div className="p-6 border-t border-gray-50 bg-gray-50/20 flex flex-col md:flex-row items-center justify-between gap-4 font-bold">
                                 <p className="text-sm text-gray-500">
-                                    Page <span className="text-indigo-600 font-bold">{currentPage}</span> of <span className="text-indigo-600 font-bold">{totalPages}</span>
+                                    Page <span className="text-blue-600 font-bold">{currentPage}</span> of <span className="text-blue-600 font-bold">{totalPages}</span>
                                 </p>
                                 <div className="flex items-center gap-2">
                                     <button
@@ -269,13 +269,13 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                         </div>
                     </div>
 
-                    <div className="bg-indigo-900 p-8 rounded-[2rem] text-white relative overflow-hidden transition-all hover:scale-105 cursor-pointer">
+                    <div className="bg-blue-900 p-8 rounded-[2rem] text-white relative overflow-hidden transition-all hover:scale-105 cursor-pointer">
                         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
-                        <div className="bg-indigo-800 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 relative z-10 border border-indigo-700 shadow-inner">
-                            <CreditCard className="h-7 w-7 text-indigo-200" />
+                        <div className="bg-blue-800 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 relative z-10 border border-blue-700 shadow-inner">
+                            <CreditCard className="h-7 w-7 text-blue-200" />
                         </div>
                         <h3 className="text-lg font-bold mb-2 relative z-10">Ledger Security</h3>
-                        <p className="text-sm text-indigo-200/80 relative z-10 leading-relaxed font-medium">
+                        <p className="text-sm text-blue-200/80 relative z-10 leading-relaxed font-medium">
                             All payments are encrypted and logged with timestamps to ensure complete financial transparency for the institute.
                         </p>
                     </div>
@@ -305,10 +305,10 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                                         placeholder="Type to filter list..."
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}
-                                        className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-100 focus:ring-2 focus:ring-indigo-500 outline-none font-medium mb-2"
+                                        className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-100 focus:ring-2 focus:ring-blue-500 outline-none font-medium mb-2"
                                     />
                                 </div>
-                                <select name="studentId" required className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-bold text-gray-900 bg-gray-50/50">
+                                <select name="studentId" required className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-bold text-gray-900 bg-gray-50/50">
                                     <option value="">-- Choose Student --</option>
                                     {filteredStudents.map(s => (
                                         <option key={s.id} value={s.student?.id}>{s.name || s.username} ({s.username}) - {s.student?.course}</option>
@@ -319,11 +319,11 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Amount Paid (₹)</label>
-                                    <input name="amount" type="number" required className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-black text-indigo-600 text-lg" placeholder="5000" />
+                                    <input name="amount" type="number" required className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-black text-blue-600 text-lg" placeholder="5000" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Status</label>
-                                    <select name="status" className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-bold text-indigo-600">
+                                    <select name="status" className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-bold text-blue-600">
                                         <option value="PAID">PAID (Adjust Dues)</option>
                                         <option value="PENDING">PENDING (Log Only)</option>
                                     </select>
@@ -332,12 +332,12 @@ export default function PaymentManagement({ students, initialPayments }: { stude
 
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Transaction Notes</label>
-                                <input name="description" className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" placeholder="Monthly installment / Admission fee" />
+                                <input name="description" className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" placeholder="Monthly installment / Admission fee" />
                             </div>
 
                             <button
                                 disabled={loading}
-                                className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-indigo-700 transition-all flex items-center justify-center gap-2"
+                                className="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2"
                             >
                                 {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Complete Transaction"}
                             </button>
@@ -357,7 +357,7 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                             <X />
                         </button>
                         <h2 className="text-2xl font-black text-gray-900 mb-2">Edit Payment Entry</h2>
-                        <p className="text-gray-500 font-medium mb-8">Adjust record for <span className="text-indigo-600">{selectedPayment.student.user.name}</span></p>
+                        <p className="text-gray-500 font-medium mb-8">Adjust record for <span className="text-blue-600">{selectedPayment.student.user.name}</span></p>
 
                         <form onSubmit={handleUpdatePayment} className="space-y-6">
                             <input type="hidden" name="paymentId" value={selectedPayment.id} />
@@ -365,11 +365,11 @@ export default function PaymentManagement({ students, initialPayments }: { stude
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Correct Amount (₹)</label>
-                                    <input name="amount" type="number" required defaultValue={selectedPayment.amount} className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-black text-indigo-600 text-lg" />
+                                    <input name="amount" type="number" required defaultValue={selectedPayment.amount} className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-black text-blue-600 text-lg" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-700">Status</label>
-                                    <select name="status" defaultValue={selectedPayment.status} className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-bold text-indigo-600">
+                                    <select name="status" defaultValue={selectedPayment.status} className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-bold text-blue-600">
                                         <option value="PAID">PAID (Adjust Dues)</option>
                                         <option value="PENDING">PENDING (Log Only)</option>
                                     </select>
@@ -378,12 +378,12 @@ export default function PaymentManagement({ students, initialPayments }: { stude
 
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-gray-700">Update Notes</label>
-                                <input name="description" defaultValue={selectedPayment.description} className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                                <input name="description" defaultValue={selectedPayment.description} className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none font-medium" />
                             </div>
 
                             <button
                                 disabled={loading}
-                                className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-indigo-700 transition-all flex items-center justify-center gap-2"
+                                className="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2"
                             >
                                 {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Save Changes"}
                             </button>

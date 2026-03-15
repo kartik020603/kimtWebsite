@@ -34,7 +34,7 @@ export default function AdminSidebar() {
         <>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden fixed bottom-6 right-6 z-50 bg-indigo-600 text-white p-4 rounded-full shadow-2xl"
+                className="lg:hidden fixed bottom-6 right-6 z-50 bg-blue-600 text-white p-4 rounded-full shadow-2xl"
             >
                 {isOpen ? <X /> : <Menu />}
             </button>
@@ -46,7 +46,7 @@ export default function AdminSidebar() {
                 <div className="flex flex-col h-full">
                     <div className="p-8">
                         <Link href="/" className="flex items-center space-x-3">
-                            <div className="bg-indigo-600 p-2 rounded-xl text-white">
+                            <div className="bg-blue-600 p-2 rounded-xl text-white">
                                 <LayoutDashboard className="h-6 w-6" />
                             </div>
                             <span className="text-2xl font-bold text-gray-900 tracking-tight">KIMT ERP</span>
@@ -64,12 +64,12 @@ export default function AdminSidebar() {
                                     className={`
                     flex items-center justify-between px-4 py-4 rounded-2xl transition-all group
                     ${isActive
-                                            ? "bg-indigo-50 text-indigo-600 shadow-sm"
+                                            ? "bg-blue-50 text-blue-600 shadow-sm"
                                             : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"}
                   `}
                                 >
                                     <div className="flex items-center space-x-4">
-                                        <item.icon className={`h-5 w-5 ${isActive ? "text-indigo-600" : "group-hover:text-gray-900"}`} />
+                                        <item.icon className={`h-5 w-5 ${isActive ? "text-blue-600" : "group-hover:text-gray-900"}`} />
                                         <span className="font-bold underline-offset-4">{item.name}</span>
                                     </div>
                                     {isActive && <ChevronRight className="h-4 w-4" />}

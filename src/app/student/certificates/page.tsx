@@ -30,8 +30,8 @@ export default async function StudentCertificatesPage() {
 
             {certificates.length === 0 ? (
                 <div className="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm p-20 text-center">
-                    <div className="inline-flex items-center justify-center h-20 w-20 bg-indigo-50 rounded-3xl mb-6">
-                        <Award className="h-10 w-10 text-indigo-300" />
+                    <div className="inline-flex items-center justify-center h-20 w-20 bg-blue-50 rounded-3xl mb-6">
+                        <Award className="h-10 w-10 text-blue-300" />
                     </div>
                     <h2 className="text-xl font-bold text-gray-600 mb-2">No Certificates Yet</h2>
                     <p className="text-gray-400 font-medium">Your certificates will appear here once issued by the institute.</p>

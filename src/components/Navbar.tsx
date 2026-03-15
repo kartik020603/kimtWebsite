@@ -21,10 +21,10 @@ export default function Navbar() {
                 <div className="flex justify-between h-20">
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center space-x-2">
-                            <div className="bg-indigo-600 p-2 rounded-lg">
+                            <div className="bg-blue-600 p-2 rounded-lg">
                                 <GraduationCap className="h-6 w-6 text-white" />
                             </div>
-                            <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
+                            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
                                 KIMT
                             </span>
                         </Link>
@@ -35,7 +35,7 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="flex items-center space-x-1 text-gray-600 hover:text-indigo-600 transition-colors font-medium"
+                                className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors font-medium"
                             >
                                 <link.icon className="h-4 w-4" />
                                 <span>{link.name}</span>
@@ -43,7 +43,7 @@ export default function Navbar() {
                         ))}
                         <Link
                             href="/login"
-                            className="bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-indigo-700 transition-all hover:scale-105 shadow-md shadow-indigo-200"
+                            className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all hover:scale-105 shadow-md shadow-blue-200"
                         >
                             Login
                         </Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-600 hover:text-indigo-600"
+                            className="text-gray-600 hover:text-blue-600"
                         >
                             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>
@@ -69,7 +69,7 @@ export default function Navbar() {
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-xl transition-colors"
+                                className="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-colors"
                             >
                                 <link.icon className="h-5 w-5" />
                                 <span className="font-medium">{link.name}</span>
@@ -78,7 +78,7 @@ export default function Navbar() {
                         <Link
                             href="/login"
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center justify-center w-full bg-indigo-600 text-white px-4 py-3 rounded-xl font-bold mt-4"
+                            className="flex items-center justify-center w-full bg-blue-600 text-white px-4 py-3 rounded-xl font-bold mt-4"
                         >
                             Login
                         </Link>

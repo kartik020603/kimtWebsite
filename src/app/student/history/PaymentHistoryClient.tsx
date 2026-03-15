@@ -10,7 +10,7 @@ export default function PaymentHistoryClient({ studentData }: { studentData: any
     return (
         <div className="max-w-5xl mx-auto space-y-10 py-10">
             <div className="flex items-center gap-4">
-                <div className="bg-indigo-600 p-3 rounded-2xl shadow-lg shadow-indigo-100">
+                <div className="bg-blue-600 p-3 rounded-2xl shadow-lg shadow-blue-100">
                     <History className="h-7 w-7 text-white" />
                 </div>
                 <div>
@@ -36,7 +36,7 @@ export default function PaymentHistoryClient({ studentData }: { studentData: any
                                 <tr key={p.id} className="text-gray-700 hover:bg-gray-50/50 transition-colors group">
                                     <td className="py-6 font-medium">{new Date(p.paymentDate).toLocaleDateString()}</td>
                                     <td className="py-6 font-mono text-xs text-gray-400">{p.id.substring(0, 12)}...</td>
-                                    <td className="py-6 font-black text-indigo-600 text-lg">₹{p.amount.toLocaleString()}</td>
+                                    <td className="py-6 font-black text-blue-600 text-lg">₹{p.amount.toLocaleString()}</td>
                                     <td className="py-6">
                                         <span className={`px-4 py-1.5 rounded-full text-xs font-black ${p.status === 'PAID' ? 'bg-emerald-100 text-emerald-600' : 'bg-red-100 text-red-600'}`}>
                                             {p.status}
@@ -45,7 +45,7 @@ export default function PaymentHistoryClient({ studentData }: { studentData: any
                                     <td className="py-6 text-center">
                                         <button
                                             onClick={() => setSelectedPayment(p)}
-                                            className="inline-flex items-center justify-center p-2 rounded-xl bg-gray-50 text-gray-400 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm group-hover:shadow-indigo-100"
+                                            className="inline-flex items-center justify-center p-2 rounded-xl bg-gray-50 text-gray-400 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm group-hover:shadow-blue-100"
                                             title="View Receipt"
                                         >
                                             <FileText className="h-5 w-5" />

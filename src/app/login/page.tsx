@@ -50,12 +50,12 @@ export default function LoginPage() {
     return (
         <div className="min-h-[calc(100vh-80px)] bg-gray-50 flex items-center justify-center p-4">
             <div className="max-w-md w-full">
-                <div className="bg-white rounded-[2rem] shadow-2xl shadow-indigo-100 border border-gray-100 overflow-hidden">
-                    <div className="bg-indigo-600 p-8 text-center text-white relative">
+                <div className="bg-white rounded-[2rem] shadow-2xl shadow-blue-100 border border-gray-100 overflow-hidden">
+                    <div className="bg-blue-600 p-8 text-center text-white relative">
                         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
                         <GraduationCap className="h-12 w-12 mx-auto mb-4 relative z-10" />
                         <h1 className="text-3xl font-bold relative z-10 tracking-tight">KIMT Portal</h1>
-                        <p className="text-indigo-100 relative z-10 opacity-80 mt-1">Sign in to your account</p>
+                        <p className="text-blue-100 relative z-10 opacity-80 mt-1">Sign in to your account</p>
                     </div>
 
                     <div className="p-10">
@@ -74,7 +74,7 @@ export default function LoginPage() {
                                         type="text"
                                         value={username}
                                         onChange={(e) => setUsername(e.target.value)}
-                                        className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                                        className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                                         placeholder="Enter your username"
                                         required
                                     />
@@ -89,7 +89,7 @@ export default function LoginPage() {
                                         type="password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                                        className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                                         placeholder="••••••••"
                                         required
                                     />
@@ -99,7 +99,7 @@ export default function LoginPage() {
 
                             <button
                                 disabled={loading}
-                                className="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100 flex items-center justify-center gap-2 group disabled:opacity-70"
+                                className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100 flex items-center justify-center gap-2 group disabled:opacity-70"
                             >
                                 {loading ? (
                                     <Loader2 className="h-5 w-5 animate-spin" />
@@ -114,7 +114,7 @@ export default function LoginPage() {
 
                         <div className="mt-8 pt-8 border-t border-gray-50 text-center">
                             <p className="text-gray-500 text-sm">
-                                Forgot your password? <Link href="/contact" className="text-indigo-600 font-bold hover:underline">Contact Admin</Link>
+                                Forgot your password? <Link href="/contact" className="text-blue-600 font-bold hover:underline">Contact Admin</Link>
                             </p>
                         </div>
                     </div>

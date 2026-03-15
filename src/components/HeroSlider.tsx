@@ -55,7 +55,7 @@ export default function HeroSlider() {
                     <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 drop-shadow-xl">
                         Empowering Minds,{" "}
                         <br />
-                        <span className="bg-gradient-to-r from-indigo-300 to-blue-300 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent">
                             Shaping Futures
                         </span>
                     </h1>
@@ -66,7 +66,7 @@ export default function HeroSlider() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
                             href="/course"
-                            className="w-full sm:w-auto bg-indigo-600 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-900/40 flex items-center justify-center gap-2 group"
+                            className="w-full sm:w-auto bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-900/40 flex items-center justify-center gap-2 group"
                         >
                             Explore Courses
                             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />

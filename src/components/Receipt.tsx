@@ -143,7 +143,7 @@ export default function Receipt({ payment, student, onClose }: ReceiptProps) {
                     <button
                         onClick={() => doDownload("pdf")}
                         disabled={isDownloading}
-                        className="flex-1 py-4 rounded-2xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+                        className="flex-1 py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
                     >
                         {isDownloading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Download className="h-5 w-5" />}
                         PDF

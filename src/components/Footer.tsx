@@ -11,7 +11,7 @@ export default function Footer() {
                     {/* Brand Section */}
                     <div className="space-y-6">
                         <Link href="/" className="flex items-center gap-2 group">
-                            <div className="bg-indigo-600 p-2 rounded-xl group-hover:rotate-12 transition-transform">
+                            <div className="bg-blue-600 p-2 rounded-xl group-hover:rotate-12 transition-transform">
                                 <GraduationCap className="h-6 w-6 text-white" />
                             </div>
                             <span className="text-2xl font-black tracking-tighter text-white">
@@ -23,7 +23,7 @@ export default function Footer() {
                         </p>
                         <div className="flex items-center gap-4">
                             {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                                <a key={i} href="#" className="h-10 w-10 bg-gray-900 rounded-xl flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all">
+                                <a key={i} href="#" className="h-10 w-10 bg-gray-900 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
                                     <Icon className="h-5 w-5" />
                                 </a>
                             ))}
@@ -42,8 +42,8 @@ export default function Footer() {
                                 { name: "Contact", href: "/contact" }
                             ].map((link) => (
                                 <li key={link.name}>
-                                    <Link href={link.href} className="hover:text-indigo-400 font-medium transition-colors flex items-center gap-2">
-                                        <div className="h-1.5 w-1.5 bg-indigo-600 rounded-full" />
+                                    <Link href={link.href} className="hover:text-blue-400 font-medium transition-colors flex items-center gap-2">
+                                        <div className="h-1.5 w-1.5 bg-blue-600 rounded-full" />
                                         {link.name}
                                     </Link>
                                 </li>
@@ -56,20 +56,20 @@ export default function Footer() {
                         <h4 className="text-white font-bold text-lg mb-6">Contact Us</h4>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
-                                <Phone className="h-5 w-5 text-indigo-500 flex-shrink-0 mt-1" />
+                                <Phone className="h-5 w-5 text-blue-500 flex-shrink-0 mt-1" />
                                 <div>
                                     <p className="text-white font-bold">+91 8126100208</p>
                                     <p className="text-sm text-gray-500">Mon - Sat, 9am - 6pm</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3">
-                                <Mail className="h-5 w-5 text-indigo-500 flex-shrink-0 mt-1" />
-                                <a href="mailto:ravikartikcomputers@gmail.com" className="hover:text-indigo-400 transition-colors break-words font-medium">
+                                <Mail className="h-5 w-5 text-blue-500 flex-shrink-0 mt-1" />
+                                <a href="mailto:ravikartikcomputers@gmail.com" className="hover:text-blue-400 transition-colors break-words font-medium">
                                     ravikartikcomputers@gmail.com
                                 </a>
                             </li>
                             <li className="flex items-start gap-3">
-                                <MapPin className="h-5 w-5 text-indigo-500 flex-shrink-0 mt-1" />
+                                <MapPin className="h-5 w-5 text-blue-500 flex-shrink-0 mt-1" />
                                 <p className="text-sm font-medium leading-relaxed">
                                     Agra, Uttar Pradesh, India
                                 </p>
@@ -87,9 +87,9 @@ export default function Footer() {
                             <input
                                 type="email"
                                 placeholder="Email address"
-                                className="w-full bg-gray-900 border border-gray-800 rounded-2xl py-4 px-5 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-medium"
+                                className="w-full bg-gray-900 border border-gray-800 rounded-2xl py-4 px-5 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all font-medium"
                             />
-                            <button className="absolute right-2 top-2 bottom-2 bg-indigo-600 text-white px-5 rounded-xl font-bold hover:bg-indigo-700 transition-all text-sm">
+                            <button className="absolute right-2 top-2 bottom-2 bg-blue-600 text-white px-5 rounded-xl font-bold hover:bg-blue-700 transition-all text-sm">
                                 Join
                             </button>
                         </form>

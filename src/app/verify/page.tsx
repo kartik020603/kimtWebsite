@@ -37,7 +37,7 @@ export default async function VerifyPage({
                     <h1 className="text-4xl font-black text-white tracking-tight drop-shadow-2xl mb-2">
                         Certificate Verification
                     </h1>
-                    <p className="text-indigo-100 font-medium">
+                    <p className="text-blue-100 font-medium">
                         Verify the authenticity of any KIMT certificate instantly.
                     </p>
                 </div>
@@ -45,9 +45,9 @@ export default async function VerifyPage({
 
             {/* Search Form */}
             <div className="max-w-xl mx-auto mb-10">
-                <div className="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-indigo-50 overflow-hidden relative">
+                <div className="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-blue-50 overflow-hidden relative">
                     <div className="absolute top-0 right-0 p-8 opacity-5">
-                        <ShieldCheck className="h-32 w-32 text-indigo-600 rotate-12" />
+                        <ShieldCheck className="h-32 w-32 text-blue-600 rotate-12" />
                     </div>
                     <form method="GET" action="/verify" className="relative z-10 space-y-6">
                         <div className="space-y-2">
@@ -57,7 +57,7 @@ export default async function VerifyPage({
                                     type="text"
                                     name="id"
                                     defaultValue={certId}
-                                    className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-lg font-medium"
+                                    className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-lg font-medium"
                                     placeholder="e.g. KIMT-2026-0001"
                                     required
                                 />
@@ -66,7 +66,7 @@ export default async function VerifyPage({
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100 flex items-center justify-center gap-2"
+                            className="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100 flex items-center justify-center gap-2"
                         >
                             <ShieldCheck className="h-5 w-5" />
                             Verify Certificate
