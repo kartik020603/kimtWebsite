@@ -1,4 +1,5 @@
 import { Award, Target, Users, ShieldCheck, Mail, MapPin } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function About() {
     return (
@@ -16,14 +17,14 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="max-w-3xl mx-auto text-center mb-20">
+            <AnimatedSection delay={0.2} className="max-w-3xl mx-auto text-center mb-20">
                 <p className="text-xl text-gray-600 leading-relaxed font-medium">
                     KIMT is dedicated to providing cutting-edge education and industrial training in the field of modern technology. Our mission is to bridge the gap between academic knowledge and industry requirements.
                 </p>
-            </div>
+            </AnimatedSection>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
-                <div className="space-y-6">
+                <AnimatedSection direction="right" className="space-y-6">
                     <div className="inline-flex items-center space-x-2 bg-blue-100/50 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold">
                         <Target className="h-4 w-4" />
                         <span>Our Vision</span>
@@ -45,8 +46,8 @@ export default function About() {
                             </li>
                         ))}
                     </ul>
-                </div>
-                <div className="relative">
+                </AnimatedSection>
+                <AnimatedSection direction="left" delay={0.2} className="relative">
                     <div className="aspect-square bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl shadow-2xl overflow-hidden flex items-center justify-center p-12">
                         <GraduationCap className="h-64 w-64 text-white/20 absolute -bottom-10 -right-10" />
                         <Users className="h-48 w-48 text-white relative z-10" />
@@ -55,7 +56,7 @@ export default function About() {
                         <p className="text-gray-900 font-bold text-lg mb-1">20+ Years</p>
                         <p className="text-gray-500 text-sm">Of educational excellence in tech training.</p>
                     </div>
-                </div>
+                </AnimatedSection>
             </div>
         </div>
     );

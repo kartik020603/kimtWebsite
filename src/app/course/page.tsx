@@ -1,5 +1,6 @@
 import { ArrowRight, Keyboard, Monitor, Code, Cpu, Calculator, BookOpen } from "lucide-react";
 import Link from "next/link";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Courses() {
     const courses = [
@@ -31,18 +32,20 @@ export default function Courses() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {courses.map((course, i) => (
-                    <div key={i} className="group p-8 rounded-3xl bg-white border border-gray-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-50 transition-all duration-300">
-                        <div className={`w-14 h-14 ${course.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                            <course.icon className="h-7 w-7" />
+                    <AnimatedSection key={i} delay={i * 0.1}>
+                        <div className="group p-8 rounded-3xl bg-white border border-gray-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-50 transition-all duration-300 h-full flex flex-col">
+                            <div className={`w-14 h-14 ${course.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                                <course.icon className="h-7 w-7" />
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
+                            <p className="text-sm font-semibold text-blue-500 mb-4">{course.duration}</p>
+                            <p className="text-gray-600 mb-8 leading-relaxed flex-1">{course.desc}</p>
+                            <Link href="/contact" className="flex items-center gap-2 text-gray-900 font-bold hover:text-blue-600 transition-colors mt-auto">
+                                Enroll Now
+                                <ArrowRight className="h-4 w-4" />
+                            </Link>
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
-                        <p className="text-sm font-semibold text-blue-500 mb-4">{course.duration}</p>
-                        <p className="text-gray-600 mb-8 leading-relaxed">{course.desc}</p>
-                        <Link href="/contact" className="flex items-center gap-2 text-gray-900 font-bold hover:text-blue-600 transition-colors">
-                            Enroll Now
-                            <ArrowRight className="h-4 w-4" />
-                        </Link>
-                    </div>
+                    </AnimatedSection>
                 ))}
             </div>
         </div>

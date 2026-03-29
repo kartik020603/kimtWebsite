@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Send } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Contact() {
     return (
@@ -20,7 +21,7 @@ export default function Contact() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
-                <div>
+                <AnimatedSection direction="right">
                     <div className="space-y-10">
                         <div className="flex items-start gap-6">
                             <div className="bg-blue-100 p-4 rounded-2xl flex-shrink-0">
@@ -65,9 +66,9 @@ export default function Contact() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </AnimatedSection>
 
-                <div className="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-blue-50">
+                <AnimatedSection direction="left" delay={0.2} className="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-blue-50">
                     <form className="space-y-6">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div className="space-y-2">
@@ -92,11 +93,11 @@ export default function Contact() {
                             <Send className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </button>
                     </form>
-                </div>
+                </AnimatedSection>
             </div>
 
             {/* Google Maps Embed */}
-            <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-80 w-full">
+            <AnimatedSection direction="up" delay={0.4} className="rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-80 w-full">
                 <iframe
                     src="https://www.google.com/maps?q=kartike+house+8b+13a+kk+krishna+puram+colony+mau+road+khandari+agra+282005&output=embed"
                     width="100%"
@@ -105,9 +106,9 @@ export default function Contact() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="KIMT Location on Google Maps"
+                     title="KIMT Location on Google Maps"
                 />
-            </div>
+            </AnimatedSection>
         </div>
     );
 }

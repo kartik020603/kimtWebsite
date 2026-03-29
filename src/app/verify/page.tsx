@@ -1,6 +1,7 @@
 import { Search, ShieldCheck, AlertCircle, CheckCircle2, Award, User, BookOpen, Clock, Phone, UserCheck } from "lucide-react";
 import prisma from "@/lib/prisma";
 import CertificateCard from "@/components/CertificateCard";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default async function VerifyPage({
     searchParams
@@ -44,7 +45,7 @@ export default async function VerifyPage({
             </div>
 
             {/* Search Form */}
-            <div className="max-w-xl mx-auto mb-10">
+            <AnimatedSection delay={0.2} className="max-w-xl mx-auto mb-10">
                 <div className="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-blue-50 overflow-hidden relative">
                     <div className="absolute top-0 right-0 p-8 opacity-5">
                         <ShieldCheck className="h-32 w-32 text-blue-600 rotate-12" />
@@ -73,12 +74,12 @@ export default async function VerifyPage({
                         </button>
                     </form>
                 </div>
-            </div>
+            </AnimatedSection>
 
             {/* Result */}
             {searched && !certificate && (
-                <div className="max-w-xl mx-auto">
-                    <div className="bg-red-50 border border-red-100 p-8 rounded-3xl flex items-center gap-6 animate-in zoom-in-95 duration-300">
+                <AnimatedSection direction="up" className="max-w-xl mx-auto">
+                    <div className="bg-red-50 border border-red-100 p-8 rounded-3xl flex items-center gap-6">
                         <div className="h-14 w-14 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0">
                             <AlertCircle className="h-7 w-7 text-red-600" />
                         </div>
@@ -87,13 +88,13 @@ export default async function VerifyPage({
                             <p className="text-sm text-red-500 font-medium mt-1">No record found for <span className="font-bold">"{certId}"</span>. Please check the ID and try again.</p>
                         </div>
                     </div>
-                </div>
+                </AnimatedSection>
             )}
 
             {certificate && (
-                <div className="max-w-3xl mx-auto">
+                <AnimatedSection direction="up" className="max-w-3xl mx-auto">
                     {/* Valid Banner */}
-                    <div className="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl flex items-center gap-4 mb-6 animate-in slide-in-from-top-2 duration-300">
+                    <div className="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl flex items-center gap-4 mb-6">
                         <CheckCircle2 className="h-6 w-6 text-emerald-600 flex-shrink-0" />
                         <div>
                             <p className="font-black text-emerald-700">Certificate Verified ✓</p>
@@ -102,7 +103,7 @@ export default async function VerifyPage({
                     </div>
 
                     <CertificateCard certificate={certificate} student={certificate.student} showDownload={false} />
-                </div>
+                </AnimatedSection>
             )}
         </div>
     );
