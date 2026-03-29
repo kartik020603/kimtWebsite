@@ -1,0 +1,26 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <g filter="url(#shadow)">
+    <!-- Main stem of K -->
+    <rect x="156" y="140" width="48" height="232" rx="12" fill="white" />
+    
+    <!-- Top arm -->
+    <path d="M 216 270 L 330 145 C 336 138 346 138 352 145 L 368 162 C 374 168 374 178 368 184 L 216 332 Z" fill="white" />
+    <!-- Bottom arm -->
+    <path d="M 186 240 L 368 358 C 374 362 376 372 370 378 L 350 392 C 344 396 334 394 328 390 L 206 295 Z" fill="white" />
+
+    <!-- A tech-education abstract accent dot -->
+    <circle cx="355" cy="155" r="20" fill="#38bdf8" />
+  </g>
+</svg>
