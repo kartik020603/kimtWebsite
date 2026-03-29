@@ -17,7 +17,7 @@ export default function FloatingContact() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
       {/* WhatsApp Button */}
       <a 
-        href={`https://wa.me/918410617268`}
+        href={`https://wa.me/918410617268?text=${encodeURIComponent("Hi, Sir I found your number on your kimt website I have an enquiry")}`}
         target="_blank"
         rel="noopener noreferrer"
         className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition animate-bounce flex items-center justify-center min-w-[3rem] min-h-[3rem]"
