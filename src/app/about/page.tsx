@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { Award, Target, Users, ShieldCheck, Mail, MapPin } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn more about KIMT's mission to provide the best industrial tech training in Agra. 20+ years of educational excellence.",
+};
 
 export default function About() {
     return (

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, Award, Users, BookOpen, ShieldCheck } from "lucide-react";
 import HeroSlider from "@/components/HeroSlider";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to KIMT Agra - the best computer institute for professional courses in Tally, Web Development, and AI. Start your tech journey today.",
+};
 
 export default function Home() {
   return (

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { Search, ShieldCheck, AlertCircle, CheckCircle2, Award, User, BookOpen, Clock, Phone, UserCheck } from "lucide-react";
 import prisma from "@/lib/prisma";
 import CertificateCard from "@/components/CertificateCard";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Verify Certificate",
+  description: "Verify the authenticity of any KIMT certificate instantly on our secure digital portal.",
+};
 
 export default async function VerifyPage({
     searchParams

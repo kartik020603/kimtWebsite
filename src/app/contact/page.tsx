@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with KIMT Agra. We're here to help you navigate your educational journey.",
+};
 
 export default function Contact() {
     return (

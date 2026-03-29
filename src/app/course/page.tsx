@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { ArrowRight, Keyboard, Monitor, Code, Cpu, Calculator, BookOpen } from "lucide-react";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Professional Courses",
+  description: "Browse our industry-vetted tech courses in Agra. Tally, Web Development, AI, and more.",
+};
 
 export default function Courses() {
     const courses = [
